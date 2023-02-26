@@ -17,7 +17,7 @@ data class Cell(val row: Int, val column: Int) {
         if (bidi) cell.unlink(this, bidi = false)
     }
 
-    fun isLinked(cell: Cell) = links.contains(cell)
+    fun isLinked(cell: Cell?) = links.contains(cell)
 
     val neighbors: Set<Cell>
         get() = buildSet {

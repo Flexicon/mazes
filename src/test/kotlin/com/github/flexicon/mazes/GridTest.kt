@@ -50,8 +50,8 @@ class GridTest {
         // Assert out of bounds lookups
         assertNull(grid[-1, 0])
         assertNull(grid[0, -1])
-        assertNull(grid[2, 0])
-        assertNull(grid[0, 2])
+        assertNull(grid[grid.rows, 0])
+        assertNull(grid[0, grid.columns])
     }
 
     @Test
@@ -62,6 +62,7 @@ class GridTest {
 
         grid.forEachCell { ranCells.add(it) }
 
+        assertEquals(grid.rows * grid.columns, ranCells.size)
         assertEquals(allCells, ranCells)
     }
 }

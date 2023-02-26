@@ -1,8 +1,8 @@
 package com.github.flexicon.mazes
 
 class Grid(
-    private val rows: Int,
-    private val columns: Int,
+    val rows: Int,
+    val columns: Int,
 ) {
     private val grid = List(rows) { row ->
         List(columns) { column ->
@@ -27,5 +27,5 @@ class Grid(
 
     fun forEachCell(fn: (Cell) -> Unit) = forEachRow { it.forEach(fn) }
 
-    private fun forEachRow(fn: (List<Cell>) -> Unit) = grid.forEach { fn(it) }
+    fun forEachRow(fn: (List<Cell>) -> Unit) = grid.forEach { fn(it) }
 }
