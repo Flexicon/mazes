@@ -22,12 +22,8 @@ class Grid(
         }
     }
 
-    operator fun get(row: Int, column: Int): Cell? {
-        if (row !in 0 until rows) return null
-        if (column !in 0 until grid[row].size) return null
-
-        return grid[row][column]
-    }
+    operator fun get(row: Int, column: Int): Cell? =
+        grid.getOrNull(row)?.getOrNull(column)
 
     fun forEachCell(fn: (Cell) -> Unit) = forEachRow { it.forEach(fn) }
 
