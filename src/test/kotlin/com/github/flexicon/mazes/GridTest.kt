@@ -47,10 +47,11 @@ class GridTest {
             assertEquals(grid[0, 1], cell.north)
         }
 
+        // Assert out of bounds lookups
         assertNull(grid[-1, 0])
         assertNull(grid[0, -1])
-        assertNull(grid[99, 0])
-        assertNull(grid[0, 99])
+        assertNull(grid[2, 0])
+        assertNull(grid[0, 2])
     }
 
     @Test
