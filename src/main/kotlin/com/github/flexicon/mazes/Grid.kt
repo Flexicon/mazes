@@ -23,10 +23,8 @@ class Grid(
     }
 
     operator fun get(row: Int, column: Int): Cell? {
-        if (row >= rows) return null
-        if (row < 0) return null
-        if (column >= grid[row].size) return null
-        if (column < 0) return null
+        if (row !in 0 until rows) return null
+        if (column !in 0 until grid[row].size) return null
 
         return grid[row][column]
     }
