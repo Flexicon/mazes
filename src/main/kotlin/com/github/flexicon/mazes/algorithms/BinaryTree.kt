@@ -1,16 +1,17 @@
 package com.github.flexicon.mazes.algorithms
 
 import com.github.flexicon.mazes.Grid
+import kotlin.random.Random
 
-object BinaryTree : Algorithm {
+class BinaryTree(private val rand: Random = Random) : Algorithm {
     override fun applyTo(grid: Grid) {
         grid.forEachCell { cell ->
             val neighbors = buildList {
-                cell.north?.let { add(cell) }
-                cell.east?.let { add(cell) }
+                cell.north?.let { add(it) }
+                cell.east?.let { add(it) }
             }
 
-            neighbors.randomOrNull()?.let { cell.link(it) }
+            neighbors.randomOrNull(rand)?.let { cell.link(it) }
         }
     }
 }
