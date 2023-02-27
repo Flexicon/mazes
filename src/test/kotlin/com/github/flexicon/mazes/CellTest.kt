@@ -45,10 +45,9 @@ class CellTest {
 
         val nCell2 = Cell(nCell.row, nCell.column)
         cell.north = nCell2
-        // nCell == nCell2 -> true which means the assertion doesn't need to change
-        assertEquals(setOf(nCell, eCell, sCell, wCell), cell.neighbors)
+        assertEquals(setOf(nCell2, eCell, sCell, wCell), cell.neighbors)
 
         cell.east = null
-        assertEquals(setOf(nCell, sCell, wCell), cell.neighbors)
+        assertEquals(setOf(nCell2, sCell, wCell), cell.neighbors)
     }
 }
