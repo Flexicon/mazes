@@ -1,14 +1,11 @@
 package com.github.flexicon.mazes
 
-class Cell(
-    val row: Int,
-    val column: Int,
-    var north: Cell? = null,
-    var east: Cell? = null,
-    var south: Cell? = null,
-    var west: Cell? = null,
-) {
+class Cell(val row: Int, val column: Int) {
     private val links = mutableSetOf<Cell>()
+    var north: Cell? = null
+    var east: Cell? = null
+    var south: Cell? = null
+    var west: Cell? = null
 
     fun link(cell: Cell, bidi: Boolean = true): Cell = apply {
         links.add(cell)

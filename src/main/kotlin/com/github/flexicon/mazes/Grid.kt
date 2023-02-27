@@ -1,9 +1,6 @@
 package com.github.flexicon.mazes
 
-class Grid(
-    val rows: Int,
-    val columns: Int,
-) {
+class Grid(val rows: Int, val columns: Int) {
     private val grid = List(rows) { row ->
         List(columns) { column ->
             Cell(row, column)
