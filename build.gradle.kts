@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm") version "1.8.10"
-    application
+    id("org.jlleitschuh.gradle.ktlint") version "11.3.1"
 }
 
 group = "com.github.flexicon"
@@ -21,8 +21,4 @@ tasks.test {
 
 kotlin {
     jvmToolchain(17)
-}
-
-application {
-    mainClass.set("com.github.flexicon.mazes.ApplicationKt")
 }

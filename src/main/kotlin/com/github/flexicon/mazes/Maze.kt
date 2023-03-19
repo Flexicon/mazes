@@ -8,7 +8,6 @@ object Maze {
     fun binaryTree(rows: Int, columns: Int) =
         buildWithAlgorithm(rows, columns, BinaryTree)
 
-
     fun sidewinder(rows: Int, columns: Int) =
         buildWithAlgorithm(rows, columns, Sidewinder)
 

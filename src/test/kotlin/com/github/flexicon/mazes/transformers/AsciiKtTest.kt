@@ -20,7 +20,8 @@ class AsciiKtTest {
 
     @Test
     fun `should print Grid to ASCII`() {
-        assertEquals("""
+        assertEquals(
+            """
             +---+---+---+
             |           |
             +   +---+---+
@@ -28,7 +29,9 @@ class AsciiKtTest {
             +---+   +   +
             |       |   |
             +---+---+---+
-        """.trimIndent(), grid.toAscii())
+            """.trimIndent(),
+            grid.toAscii()
+        )
     }
 
     private fun Grid.link(row1: Int, col1: Int, row2: Int, col2: Int) {
