@@ -1,6 +1,8 @@
 plugins {
     kotlin("jvm") version "1.8.10"
     id("org.jlleitschuh.gradle.ktlint") version "11.3.1"
+    `java-library`
+    `maven-publish`
 }
 
 group = "com.github.flexicon"
@@ -21,4 +23,12 @@ tasks.test {
 
 kotlin {
     jvmToolchain(17)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["kotlin"])
+        }
+    }
 }
